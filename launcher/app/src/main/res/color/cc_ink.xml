@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Control Center titles and icons: dark ink on the light focus fill, light text otherwise. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:color="@color/tvh_focus_ink" />
+    <item android:color="@color/tvh_text" />
+</selector>

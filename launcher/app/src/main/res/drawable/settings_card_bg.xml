@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A Launcher settings group card: tvh_surface, 16dp corners. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/tvh_surface" />
+    <corners android:radius="16dp" />
+</shape>

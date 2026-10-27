@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Chinese home header (both zh-rCN and zh-rTW): no tracking, no capitals, so "下午好" stays one word. Each style
+         repeats every item of its values/ twin, because this one replaces it whole. -->
+    <style name="HomeGreeting">
+        <!-- 12sp CJK cannot be read from 3 m; Latin capitals at 12sp can. -->
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="HomeDate">
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="HomeShamsiDate">
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="HomeAmPm">
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="ControlSection">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/tvh_text3</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+</resources>

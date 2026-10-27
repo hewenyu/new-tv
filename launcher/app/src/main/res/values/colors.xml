@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The redesign's dark palette, read from 3 m (docs/redesign-spec.md §3). Contrast ratios are against
+         bg / surface / raised; body text stays at 4.5:1 or better. -->
+    <color name="tvh_bg">#FF0B0E14</color>           <!-- page background -->
+    <color name="tvh_surface">#FF171C28</color>      <!-- panels -->
+    <color name="tvh_raised">#FF222A3A</color>       <!-- cards and rows -->
+    <color name="tvh_text">#FFF2F5FA</color>         <!-- primary text: 17.7 / 15.6 / 13.2 -->
+    <color name="tvh_text2">#FFAEB8CA</color>        <!-- secondary text: 9.7 / 8.5 / 7.2 -->
+    <color name="tvh_text3">#FF8691A6</color>        <!-- captions, group titles: 6.1 / 5.4 / 4.5 -->
+    <color name="tvh_accent">#FF7DB1FF</color>       <!-- selected, emphasis -->
+    <color name="tvh_positive">#FF5FD49A</color>     <!-- connected -->
+    <color name="tvh_warning">#FFFFB65C</color>      <!-- warnings -->
+    <!-- Focus is the top-bar pills' look: light fill, dark ink (17.7:1). It also scales or outlines, never colour alone. -->
+    <color name="tvh_focus_bg">#FFF2F5FA</color>
+    <color name="tvh_focus_ink">#FF0B0E14</color>
+</resources>

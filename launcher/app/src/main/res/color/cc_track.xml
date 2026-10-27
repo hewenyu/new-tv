@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The volume bar's track: tvh_raised on the dark row; on the light focused row a darker track keeps the
+     accent fill readable (#7DB1FF: 8.8:1 on tvh_bg, 6.6:1 on tvh_raised). -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:color="@color/tvh_raised" />
+    <item android:color="@color/tvh_bg" />
+</selector>

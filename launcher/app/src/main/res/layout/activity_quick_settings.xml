@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Control Center (QuickSettingsActivity): a full-height sheet at the right edge over a dim scrim, opened by the
+     Home pill (control_center) and the remote's Settings button (settings_key_panel). The tiles and rows are added
+     in code, from item_control_tile and item_control_row; the sheet's background is drawn in code too, so the
+     Hebrew menu bar can mirror it to the left edge. Fits a 540dp-tall screen with room to scroll. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/scrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:focusable="false" />
+
+    <ScrollView
+        android:id="@+id/panel"
+        android:layout_width="420dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingTop="26dp"
+            android:paddingBottom="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/control_center"
+                    android:textColor="@color/tvh_text"
+                    android:textSize="30sp"
+                    android:fontFamily="@string/font_medium"
+                    android:singleLine="true" />
+
+                <TextClock
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:format12Hour="h:mm"
+                    android:format24Hour="HH:mm"
+                    android:textColor="@color/tvh_text2"
+                    android:textSize="18sp"
+                    android:fontFamily="@string/font_regular" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/volume"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:background="@drawable/cc_row_bg"
+                android:focusable="true"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/volumeIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_volume"
+                    android:tint="@color/cc_ink"
+                    android:duplicateParentState="true"
+                    android:importantForAccessibility="no"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/control_volume"
+                    android:textColor="@color/cc_ink"
+                    android:duplicateParentState="true"
+                    android:textSize="18sp"
+                    android:fontFamily="@string/font_medium"
+                    android:singleLine="true" />
+
+                <ProgressBar
+                    android:id="@+id/volumeBar"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressDrawable="@drawable/cc_volume_bar"
+                    android:duplicateParentState="true"
+                    android:importantForAccessibility="no" />
+
+                <TextView
+                    android:id="@+id/volumeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="64dp"
+                    android:gravity="end"
+                    android:textColor="@color/cc_ink2"
+                    android:duplicateParentState="true"
+                    android:textSize="16sp"
+                    android:fontFamily="@string/font_medium"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/volumeHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:text="@string/control_volume_hint"
+                android:textColor="@color/tvh_text3"
+                android:textSize="13sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/quickLabel"
+                style="@style/ControlSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/control_quick" />
+
+            <LinearLayout
+                android:id="@+id/tiles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+
+            <TextView
+                android:id="@+id/moreLabel"
+                style="@style/ControlSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/control_more" />
+
+            <LinearLayout
+                android:id="@+id/rows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
