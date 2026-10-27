@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A Launcher settings chip (每行应用数 4/5/6/7 and the like), 12dp corners. Focused: the light focus fill, with a
+     dark outline when it is also the chosen one; chosen: a 2dp accent outline on tvh_raised; otherwise tvh_raised. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tvh_focus_bg" />
+            <corners android:radius="12dp" />
+            <stroke android:width="2dp" android:color="@color/tvh_focus_ink" />
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tvh_focus_bg" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tvh_raised" />
+            <corners android:radius="12dp" />
+            <stroke android:width="2dp" android:color="@color/tvh_accent" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tvh_raised" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+</selector>

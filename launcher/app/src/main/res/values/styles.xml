@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TvHome" parent="android:Theme.Material.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!-- Frosted pill, tvOS style. -->
+    <style name="TopButtonBase">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/pill_bg</item>
+        <item name="android:textColor">@drawable/pill_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:drawablePadding">9dp</item>
+        <item name="android:drawableTint">@drawable/pill_text</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="TopButton" parent="TopButtonBase" />
+
+    <!-- Icon-only pill: a 42dp circle (pill_bg's 21dp corners) with the 22dp icon centred by even padding. Give it a
+         contentDescription, since there is no text. -->
+    <style name="TopButtonIcon" parent="TopButtonBase">
+        <item name="android:layout_width">42dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:drawablePadding">0dp</item>
+    </style>
+
+    <!-- Home header type. Wide tracking and capitals suit Latin; values-zh overrides these same names, since CJK
+         spread out this way reads as separate characters ("下 午 好"). A values-zh style replaces the whole style,
+         so any item added here belongs there too. -->
+    <style name="HomeGreeting">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.22</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <!-- The date and the lunar date. -->
+    <style name="HomeDate">
+        <item name="android:letterSpacing">0.14</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="HomeShamsiDate">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+    <!-- AM/PM after a 12-hour clock: "PM" here, "下午" in Chinese. -->
+    <style name="HomeAmPm">
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Launcher settings (activity_launcher_settings): group cards of rows. A row is a focusable LinearLayout;
+         its texts follow its focus through duplicateParentState and a colour selector. -->
+    <style name="SettingsCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/settings_card_bg</item>
+        <!-- A focused row grows 2% into the 8dp padding; don't clip it there. -->
+        <item name="android:clipChildren">false</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+    <!-- A group title above a card (布局, 外观). Its type is ControlSection's, which values-zh already overrides
+         without the tracking; the parent resolves per locale, so no values-zh copy is needed here. -->
+    <style name="SettingsSection" parent="ControlSection">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">28dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+    </style>
+    <style name="SettingsRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">60dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:background">@drawable/settings_row_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <!-- The vertical title + subtitle block on a row's start side. -->
+    <style name="SettingsRowText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:duplicateParentState">true</item>
+    </style>
+    <style name="SettingsRowTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/cc_ink</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+        <item name="android:duplicateParentState">true</item>
+    </style>
+    <style name="SettingsRowSubtitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:textColor">@color/cc_ink2</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:duplicateParentState">true</item>
+    </style>
+    <!-- The current value at a row's end: 开 / 关, the wallpaper's name. -->
+    <style name="SettingsRowValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:maxWidth">320dp</item>
+        <item name="android:textColor">@color/settings_value</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:duplicateParentState">true</item>
+    </style>
+    <!-- The chevron on a row that opens something (a picker, another page). -->
+    <style name="SettingsRowChevron">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:src">@drawable/ic_chevron</item>
+        <item name="android:tint">@color/cc_ink2</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+    <!-- A row of chips: its label on the start side, the four chips at the end. Not focusable itself. -->
+    <style name="SettingsChoiceRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">60dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:clipChildren">false</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+    <!-- The label block on a chip row's start side: its title and the plain line under it. Never focused. -->
+    <style name="SettingsChoiceLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="SettingsChoiceTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/tvh_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+    </style>
+    <style name="SettingsChoiceSubtitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:textColor">@color/tvh_text2</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!-- The four chips. A focused chip grows 4%, so neither this box nor its row clips it. -->
+    <style name="SettingsChipBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:clipChildren">false</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+    <!-- One chip. Its LinearLayout holds only the four chips, since reverseRow() rebuilds it for RTL. -->
+    <style name="SettingsColumnChoice">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:minWidth">72dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/settings_choice_bg</item>
+        <item name="android:textColor">@color/settings_chip_ink</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!-- Control Center (QuickSettingsActivity): its panel window draws its own slide, so the system's activity
+         animation is off. Still translucent, and still no screenOrientation (#1122). -->
+    <style name="Theme.TvHome.ControlCenter" parent="android:Theme.Translucent.NoTitleBar.Fullscreen">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    <!-- A Control Center group title (快捷, 更多). values-zh repeats it without the tracking. -->
+    <style name="ControlSection">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/tvh_text3</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+</resources>

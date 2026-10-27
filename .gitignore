@@ -1,0 +1,10 @@
+build/
+.gradle/
+local.properties
+*.apk
+tools/venv/
+tools/adbkey/
+__pycache__/
+shots/
+backup/
+work/
